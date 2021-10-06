@@ -3,12 +3,14 @@
 #include <unistd.h>
 #include <errno.h>
 #include <sys/time.h>
+#include<sys/wait.h>
 
 int main()
 {
   pid_t pids[3];
   int j;
   int n = 3;
+  int estado;
 
   // Laço para criar os filhos
   for (j = 0; j < n; ++j) {
@@ -39,5 +41,11 @@ int main()
   /*
     IMPLEMENTAR O ESCALONADOR DOS FILHOS
   */
+
+
+  // pai espera filhos morrerem
+  for (j=0; j<n; j++){
+    wait(&estado);
+  }
   exit(0);
 }
