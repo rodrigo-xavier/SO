@@ -1,6 +1,3 @@
-// Comando p/ compilar:
-// gcc trab2.c -o trab2 -lm
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
